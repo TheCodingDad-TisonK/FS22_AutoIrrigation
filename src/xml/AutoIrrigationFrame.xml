@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<GUI name="optionsIrrigation">
+    <GuiElement type="empty" profile="uiInGameMenuFrame">
+        <!-- Static page header -->
+        <GuiElement type="empty" profile="ingameMenuFrameHeaderPanel">
+            <GuiElement type="bitmap" profile="ingameMenuGeneralSettingsHeaderIcon" />
+            <GuiElement type="text" profile="ingameMenuFrameHeaderText" text="Auto Irrigation Settings" />
+        </GuiElement>
+
+        <!-- Layout content box -->
+        <GuiElement type="empty" profile="ingameMenuSettingsBox" id="settingsContainer">
+            <GuiElement type="bitmap" profile="topScrollClipper" name="topClipper" />
+            <GuiElement type="bitmap" profile="bottomScrollClipper" name="bottomClipper" />
+            <GuiElement type="scrollingLayout" profile="ingameMenuSettingsLayout" id="boxLayout" topClipperElementName="topClipper" bottomClipperElementName="bottomClipper">
+                
+                <!-- Enable Auto Irrigation -->
+                <GuiElement type="checkedOption" profile="multiTextOptionSettings" onClick="onCheckClick" id="irrigationEnabled">
+                    <GuiElement type="button" profile="multiTextOptionSettingsLeft" />
+                    <GuiElement type="button" profile="multiTextOptionSettingsRight" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsText" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Enable Auto Irrigation" />
+                    <GuiElement type="bitmap" profile="multiTextOptionSettingsBg" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Enable or disable automatic irrigation system" />
+                </GuiElement>
+
+                <!-- Automation Level -->
+                <GuiElement type="empty" profile="ingameMenuGameSettingsTextInputWrapper">
+                    <GuiElement type="textInput" profile="ingameMenuGameSettingsTextInput" id="irrigationAutomationLevel" onEnterPressed="onEnterPressedTextInput" imeDescription="1-10" imePlaceholder="Level" imeTitle="Automation Level" imeKeyboardType="normal" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Automation Level (1-10)" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="How aggressive the automation is (1=conservative, 10=aggressive)" />
+                </GuiElement>
+
+                <!-- Water Usage -->
+                <GuiElement type="empty" profile="ingameMenuGameSettingsTextInputWrapper">
+                    <GuiElement type="textInput" profile="ingameMenuGameSettingsTextInput" id="irrigationWaterUsage" onEnterPressed="onEnterPressedTextInput" imeDescription="1-5" imePlaceholder="Usage" imeTitle="Water Usage" imeKeyboardType="normal" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Water Usage (1-5)" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="How much water to use (1=conservative, 5=heavy)" />
+                </GuiElement>
+
+                <!-- Efficiency -->
+                <GuiElement type="empty" profile="ingameMenuGameSettingsTextInputWrapper">
+                    <GuiElement type="textInput" profile="ingameMenuGameSettingsTextInput" id="irrigationEfficiency" onEnterPressed="onEnterPressedTextInput" imeDescription="1-5" imePlaceholder="Efficiency" imeTitle="System Efficiency" imeKeyboardType="normal" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="System Efficiency (1-5)" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="How efficient the irrigation system is (1=basic, 5=advanced)" />
+                </GuiElement>
+
+                <!-- Auto Start -->
+                <GuiElement type="checkedOption" profile="multiTextOptionSettings" onClick="onCheckClick" id="irrigationAutoStart">
+                    <GuiElement type="button" profile="multiTextOptionSettingsLeft" />
+                    <GuiElement type="button" profile="multiTextOptionSettingsRight" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsText" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Auto Start" />
+                    <GuiElement type="bitmap" profile="multiTextOptionSettingsBg" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Automatically start irrigation when needed" />
+                </GuiElement>
+
+                <!-- Auto Stop -->
+                <GuiElement type="checkedOption" profile="multiTextOptionSettings" onClick="onCheckClick" id="irrigationAutoStop">
+                    <GuiElement type="button" profile="multiTextOptionSettingsLeft" />
+                    <GuiElement type="button" profile="multiTextOptionSettingsRight" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsText" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Auto Stop" />
+                    <GuiElement type="bitmap" profile="multiTextOptionSettingsBg" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Automatically stop irrigation when target reached" />
+                </GuiElement>
+
+                <!-- Notifications -->
+                <GuiElement type="checkedOption" profile="multiTextOptionSettings" onClick="onCheckClick" id="irrigationShowNotifications">
+                    <GuiElement type="button" profile="multiTextOptionSettingsLeft" />
+                    <GuiElement type="button" profile="multiTextOptionSettingsRight" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsText" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Show Notifications" />
+                    <GuiElement type="bitmap" profile="multiTextOptionSettingsBg" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Show irrigation notifications" />
+                </GuiElement>
+
+                <!-- Warnings -->
+                <GuiElement type="checkedOption" profile="multiTextOptionSettings" onClick="onCheckClick" id="irrigationShowWarnings">
+                    <GuiElement type="button" profile="multiTextOptionSettingsLeft" />
+                    <GuiElement type="button" profile="multiTextOptionSettingsRight" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsText" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Show Warnings" />
+                    <GuiElement type="bitmap" profile="multiTextOptionSettingsBg" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Show warning notifications" />
+                </GuiElement>
+
+                <GuiElement type="text" profile="settingsMenuSubtitle" text="Scheduling" />
+
+                <!-- Schedule Enabled -->
+                <GuiElement type="checkedOption" profile="multiTextOptionSettings" onClick="onCheckClick" id="irrigationScheduleEnabled">
+                    <GuiElement type="button" profile="multiTextOptionSettingsLeft" />
+                    <GuiElement type="button" profile="multiTextOptionSettingsRight" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsText" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Enable Schedule" />
+                    <GuiElement type="bitmap" profile="multiTextOptionSettingsBg" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Enable time-based scheduling" />
+                </GuiElement>
+
+                <!-- Morning Time -->
+                <GuiElement type="empty" profile="ingameMenuGameSettingsTextInputWrapper">
+                    <GuiElement type="textInput" profile="ingameMenuGameSettingsTextInput" id="irrigationMorningTime" onEnterPressed="onEnterPressedTextInput" imeDescription="0-23" imePlaceholder="Hour" imeTitle="Morning Start Time" imeKeyboardType="normal" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Morning Start (0-23)" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Earliest hour to start irrigation" />
+                </GuiElement>
+
+                <!-- Evening Time -->
+                <GuiElement type="empty" profile="ingameMenuGameSettingsTextInputWrapper">
+                    <GuiElement type="textInput" profile="ingameMenuGameSettingsTextInput" id="irrigationEveningTime" onEnterPressed="onEnterPressedTextInput" imeDescription="0-23" imePlaceholder="Hour" imeTitle="Evening End Time" imeKeyboardType="normal" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Evening End (0-23)" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Latest hour to stop irrigation" />
+                </GuiElement>
+
+                <!-- Minimum Moisture -->
+                <GuiElement type="empty" profile="ingameMenuGameSettingsTextInputWrapper">
+                    <GuiElement type="textInput" profile="ingameMenuGameSettingsTextInput" id="irrigationMinMoisture" onEnterPressed="onEnterPressedTextInput" imeDescription="0-100" imePlaceholder="%" imeTitle="Minimum Moisture" imeKeyboardType="normal" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Minimum Moisture (0-100%)" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Start irrigation when moisture drops below this level" />
+                </GuiElement>
+
+                <!-- Maximum Moisture -->
+                <GuiElement type="empty" profile="ingameMenuGameSettingsTextInputWrapper">
+                    <GuiElement type="textInput" profile="ingameMenuGameSettingsTextInput" id="irrigationMaxMoisture" onEnterPressed="onEnterPressedTextInput" imeDescription="0-100" imePlaceholder="%" imeTitle="Maximum Moisture" imeKeyboardType="normal" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="Maximum Moisture (0-100%)" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Stop irrigation when moisture reaches this level" />
+                </GuiElement>
+
+                <!-- Start Irrigation Button -->
+                <GuiElement type="empty" profile="ingameMenuGameSettingsTextInputWrapper" id="startIrrigationButtonWrapper">
+                    <GuiElement type="button" profile="ingameMenuSettingsPauseButton" text="Start Irrigation Scan" onClick="onStartIrrigationClick" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTitle" text="" />
+                    <GuiElement type="text" profile="multiTextOptionSettingsTooltip" text="Manually check all fields and start irrigation if needed" />
+                </GuiElement>
+
+            </GuiElement>
+        </GuiElement>
+    </GuiElement>
+</GUI>
