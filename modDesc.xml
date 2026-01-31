@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="61">
+    <author>TisonK</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Auto Irrigation</en>
+    </title>
+    <description>
+        <en><![CDATA[Automated irrigation system for your fields. Settings can be changed!]]></en>
+    </description>
+    <iconFilename>icon.png</iconFilename>
+    <multiplayer supported="true"/>
+    <extraSourceFiles>
+        <sourceFile filename="src/scripts/AutoIrrigation.lua" />
+    </extraSourceFiles>
+</modDesc>
